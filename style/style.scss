@@ -53,6 +53,7 @@
     background: #c6a16e;
     border: none;
     overflow: hidden;
+    z-index: 5;
 
     &::before {
       content: "";
@@ -63,6 +64,7 @@
       height: 100%;
       background: #b99562;
       transition: left 0.5s ease-in-out;
+      z-index: -1;
     }
 
     &:hover {
@@ -95,6 +97,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      transform: translateY(98px);
       &-title {
         font-size: 100px;
         font-weight: 600;
@@ -127,7 +130,7 @@
   .offer {
     height: 30vh;
     text-align: center;
-    margin-top: 8%;
+    margin-top: 15%;
     &__title {
       font-size: 35px;
       font-family: "Great Vibes", cursive;
