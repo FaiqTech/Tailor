@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+#header {
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
+  justify-content: space-between;
+  background-color: #fff;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  font-size: 1rem;
+}
+#header .navigation {
+  width: 45%;
+}
+#header .navigation__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#header .navigation__list-item-link {
+  font-size: 16px;
+  color: #0a0c10;
+  font-weight: 350;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+#header .navigation__list-item-link:hover {
+  color: #c6a16e;
+}
+#header .header__btn {
+  width: 18%;
+  height: 12vh;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 0;
+  color: #fff;
+  cursor: pointer;
+  background: #c6a16e;
+  border: none;
+}
+
+#main {
+  background-color: #0b1416;
+  width: 100%;
+}
+#main .post {
+  width: 100%;
+  height: 820px;
+  display: flex;
+  align-items: center;
+}
+#main .post-empty {
+  width: 10%;
+  background-color: #fff;
+  height: 76%;
+}
+#main .post__content {
+  width: 90%;
+  height: 100%;
+  background-image: url(../assets/img/tailor.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+#main .post__content-title {
+  font-size: 100px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0 0 0 12%;
+  font-family: "Josefin Sans", sans-serif;
+}
+#main .post__content-slogan {
+  font-family: "Great Vibes", cursive;
+  color: #c6a16e;
+  font-size: 35px;
+  margin: 0 0 15% 12%;
+}
+#main .post__content-btns-btn {
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  background: #fff;
+  border: none;
+}
+#main .post__content-btns-btn i {
+  font-size: 20px;
+  line-height: 60px;
+}
+#main .offer {
+  height: 30vh;
+  text-align: center;
+  margin-top: 8%;
+}
+#main .offer__title {
+  font-size: 35px;
+  font-family: "Great Vibes", cursive;
+  color: #c6a16e;
+}
+#main .offer__text {
+  font-size: 60px;
+  color: #c6a16e;
+  font-weight: 600;
+}
+#main .top3 {
+  width: 100%;
+  height: 100vh;
+}
+#main .top3 .card {
+  display: flex;
+  color: #fff;
+}
+#main .top3 .card-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background: #c6a16e;
+}/*# sourceMappingURL=style.css.map */
