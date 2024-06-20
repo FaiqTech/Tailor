@@ -17,6 +17,13 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
@@ -52,6 +59,19 @@
       </nav>
 
       <button class="header__btn">Visit Us</button>
+
+      <nav class="menu">
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <div class="nav-mobile">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+        </div>
+      </nav>
     </header>
 
     <main id="main">
@@ -101,7 +121,7 @@
           </div>
         </div>
         <div class="card">
-          <button class="card-btn">1</button>
+          <button class="card-btn">2</button>
           <div class="card-content">
             <div class="card-content-img">
               <img src="./assets/img/cardImg2.webp" alt="card-img" />
@@ -119,7 +139,7 @@
           </div>
         </div>
         <div class="card">
-          <button class="card-btn">1</button>
+          <button class="card-btn">3</button>
           <div class="card-content">
             <div class="card-content-img">
               <img src="./assets/img/cardImg3.webp" alt="card-img" />
@@ -137,6 +157,89 @@
           </div>
         </div>
       </section>
+
+      <section class="history">
+        <div class="video">
+          <a
+            class="video__icon"
+            href="https://www.youtube.com/watch?v=1aP-TXUpNoU"
+            ><i class="fas fa-play"></i
+          ></a>
+        </div>
+        <div class="content">
+          <h1 class="content__title">Our History</h1>
+          <p class="content__text">
+            Duis aute irure dolor inasfa reprehenderit in voluptate velit esse
+            cillum reeut cupidatatfugiat nulla pariatur. Excepteur sintxsdfas
+            occaecat, cupidatat non proidente sunt in culpa qui officia
+            deserunt, mollit anim id est laborum. Sedut des perspiciatis unde
+            omnis iste.
+          </p>
+          <a class="content__btn"> About Us </a>
+        </div>
+      </section>
+
+      <article class="offer">
+        <h2 class="offer__title">Client Feedback</h2>
+        <h2 class="offer__text">Our Work For Clientss</h2>
+      </article>
+
+      <section class="swiper">
+        <swiper-container
+          class="mySwiper"
+          pagination="true"
+          pagination-clickable="true"
+          navigation="true"
+          space-between="30"
+          loop="true"
+        >
+          <swiper-slide
+            ><img src="./assets/img/model.png" alt="men"
+          /></swiper-slide>
+          <swiper-slide
+            ><img src="./assets/img/model2.png" alt="men"
+          /></swiper-slide>
+          <swiper-slide
+            ><img src="./assets/img/model3.png" alt="men"
+          /></swiper-slide>
+          <swiper-slide
+            ><img src="./assets/img/model4.png" alt="men"
+          /></swiper-slide>
+          <swiper-slide
+            ><img src="./assets/img/model5.png" alt="men"
+          /></swiper-slide>
+        </swiper-container>
+      </section>
+
+      <section class="info">
+        <div class="info-content">
+          <span class="info-content-location">Our Location</span>
+          <h3 class="info-content-title">Visit Our Tailor</h3>
+
+          <p class="info-content-text">
+            71 Madison Ave 10013 New York, 914-309701, 914-329211,<br />
+            reservations@laurent.com, office@laurent.com
+          </p>
+          <p class="info-content-text">
+            Opening hours: <br />
+            Mon – Thu: 10.00 am – 01:00 am <br />
+            Fri – Sun: 10:00 am – 02:00 am
+          </p>
+          <div class="info-content-icons">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-solid fa-globe"></i>
+          </div>
+        </div>
+        <div class="info-img">
+          <div class="info-img-off">
+            <h3 class="info-img-off-title">10% Off</h3>
+            <button class="info-img-off-btn">Get Offer</button>
+          </div>
+        </div>
+      </section>
+
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     </main>
   </body>
 </html>

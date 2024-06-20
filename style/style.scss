@@ -1,3 +1,4 @@
+@import "./mixins";
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +22,10 @@
 
   .navigation {
     width: 45%;
+
+    @include desktop {
+      display: none;
+    }
     &__list {
       display: flex;
       align-items: center;
@@ -54,7 +59,9 @@
     border: none;
     overflow: hidden;
     z-index: 5;
-
+    @include desktop {
+      display: none;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -63,13 +70,65 @@
       width: 100%;
       height: 100%;
       background: #b99562;
-      transition: left 0.5s ease-in-out;
+      transition: left 0.4s ease-in-out;
       z-index: -1;
     }
 
     &:hover {
       &::before {
         left: 0;
+      }
+    }
+  }
+
+  .menu {
+    display: none;
+    @include desktop {
+      display: block;
+    }
+    padding: 1.5rem 2rem;
+    #check {
+      display: none;
+      &:checked ~ .nav-mobile {
+        display: block;
+      }
+    }
+    .checkbtn {
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+      i {
+        color: #222831;
+        font-size: 2.5rem;
+      }
+    }
+    .nav-mobile {
+      display: none;
+      position: absolute;
+      top: 5.5rem;
+      right: 0;
+      background: #222831;
+      z-index: 1000;
+      width: 100%;
+      height: 350px;
+      padding: 1rem;
+      @include tablet {
+        top: 7rem;
+        font-size: 2rem;
+      }
+      @include mobile {
+        top: 5.9rem;
+        font-size: 1.5rem;
+      }
+
+      a {
+        color: #fff;
+        padding: 1rem 1.5rem;
+        display: block;
+        transition: 0.3s;
+        &:hover {
+          background: #c6a16e;
+        }
       }
     }
   }
@@ -82,10 +141,19 @@
     height: 820px;
     display: flex;
     align-items: center;
+    @include mobile {
+      width: 100%;
+      height: 500px;
+      align-items: start;
+    }
+
     &-empty {
       width: 10%;
       background-color: #fff;
       height: 76%;
+      @include mobile {
+        display: none;
+      }
     }
     &__content {
       width: 90%;
@@ -98,6 +166,13 @@
       flex-direction: column;
       justify-content: flex-end;
       transform: translateY(98px);
+      @include mobile {
+        transform: translateY(0);
+        justify-content: center;
+        background-image: none;
+        width: 100%;
+      }
+
       &-title {
         font-size: 100px;
         font-weight: 600;
@@ -105,6 +180,11 @@
         line-height: 1.1;
         margin: 0 0 0 12%;
         font-family: "Josefin Sans", sans-serif;
+        @include mobile {
+          font-size: 50px;
+          margin: 0;
+          text-align: center;
+        }
       }
       &-slogan {
         font-family: "Great Vibes", cursive;
@@ -113,6 +193,9 @@
         margin: 0 0 15% 12%;
       }
       &-btns {
+        @include mobile {
+          display: none;
+        }
         &-btn {
           height: 60px;
           width: 60px;
@@ -130,7 +213,8 @@
   .offer {
     height: 30vh;
     text-align: center;
-    margin-top: 15%;
+    margin-top: 10%;
+    line-height: 2;
     &__title {
       font-size: 35px;
       font-family: "Great Vibes", cursive;
@@ -140,6 +224,7 @@
       font-size: 60px;
       color: #c6a16e;
       font-weight: 600;
+      font-family: "Josefin Sans", sans-serif;
     }
   }
 
@@ -149,12 +234,21 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-
+    @include mobile {
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      align-items: start;
+    }
     .card {
       display: flex;
       gap: 20px;
       color: #fff;
       max-width: 33.333333%;
+      @include mobile {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
       &:hover img {
         transform: scale(1.1);
       }
@@ -207,6 +301,274 @@
           font-size: 27px;
           font-weight: 600;
           transition: all 0.4s ease-out 0s;
+        }
+      }
+    }
+  }
+  .history {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10% 0;
+    @include mobile {
+      flex-direction: column;
+      height: 800px;
+      padding: 0 20px;
+      gap: 50px;
+    }
+    .video {
+      width: 40%;
+      height: 100%;
+      transform: translate(70px, -70px);
+      background-image: url(../assets/img/videoImg.webp);
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include mobile {
+        width: 100%;
+        height: 100%;
+        transform: translate(0, 0);
+      }
+
+      &__icon {
+        display: inline-block;
+        background: #fff;
+        color: #c68b55;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        border-radius: 50%;
+        border: 1px solid #c68b55;
+        transition: all 0.4s ease-out 0s;
+        &:hover {
+          background: #234249;
+          color: #fff;
+        }
+      }
+    }
+    .content {
+      width: 45%;
+      height: 90%;
+      color: #161922;
+      background-color: #f4efe6;
+      @include mobile {
+        width: 100%;
+        height: 100%;
+      }
+      &__title {
+        font-size: 42px;
+        font-weight: 600;
+        margin-bottom: 28px;
+        margin-top: 10%;
+        margin-left: 100px;
+        @include mobile {
+          margin-left: 0;
+          text-align: center;
+        }
+      }
+      &__text {
+        text-align: justify;
+        color: #161922;
+        font-size: 16px;
+        width: 70%;
+        margin: 0 auto;
+        line-height: 30px;
+        font-weight: 300;
+      }
+      &__btn {
+        background: #c6a16e;
+        text-transform: capitalize;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        line-height: 0;
+        margin-bottom: 0;
+        margin-top: 30px;
+        padding: 27px 44px;
+        margin-left: 100px;
+        cursor: pointer;
+        transition: color 0.4s linear;
+        position: relative;
+        z-index: 1;
+        border: 0;
+        overflow: hidden;
+        border-radius: 0px;
+        @include mobile {
+          margin-left: 58px;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: #b99562;
+          z-index: 1;
+          border-radius: 5px;
+          transition: transform 0.5s;
+          transition-timing-function: ease;
+          transform-origin: 0 0;
+          transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+          transform: scaleX(0);
+          border-radius: 0;
+        }
+        &:hover::before {
+          transform: scaleX(1);
+          color: #fff !important;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  .swiper {
+    width: 80%;
+    margin: auto;
+
+    swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 40rem;
+      object-fit: cover;
+    }
+
+    swiper-container {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10%;
+    width: 100%;
+    height: 600px;
+    &-content {
+      text-align: center;
+      width: 45%;
+      &-location {
+        font-size: 35px;
+        margin-bottom: 22px;
+        font-family: "Great Vibes", cursive;
+        color: #c6a16e;
+      }
+      &-title {
+        font-size: 60px;
+        display: block;
+        color: #c6a16e;
+        font-weight: 600;
+        margin-bottom: 25px;
+      }
+
+      &-text {
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        line-height: 30px;
+        margin-bottom: 15px;
+        font-weight: normal;
+        color: #fff;
+        margin-bottom: 29px;
+      }
+      &-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        i {
+          font-size: 15px;
+          color: #c6a16e;
+          transition: all 0.4s ease-out 0s;
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    &-img {
+      width: 55%;
+      height: 100%;
+      background-image: url(../assets/img/tailor.png);
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      &-off {
+        background: rgba(198, 161, 110, 0.6);
+        display: inline-block;
+        padding: 34px 47px 38px 47px;
+        margin-bottom: 50px;
+        text-align: center;
+        &-title {
+          font-family: "Josefin Sans", sans-serif;
+          color: #fff;
+          font-size: 75px;
+          font-style: normal;
+          font-weight: 500;
+        }
+        &-btn {
+          background: #0b1416;
+          text-transform: capitalize;
+          color: #fff;
+          cursor: pointer;
+          display: inline-block;
+          font-size: 14px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          margin-bottom: 0;
+          padding: 17px 44px;
+          margin: 10px;
+          cursor: pointer;
+          transition: color 0.4s linear;
+          position: relative;
+          z-index: 1;
+          border: 0;
+          overflow: hidden;
+          margin: 0;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #b99562;
+            transition: left 0.4s ease-in-out;
+            z-index: -1;
+          }
+
+          &:hover {
+            &::before {
+              left: 0;
+            }
+          }
         }
       }
     }
